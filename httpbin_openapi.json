@@ -1,0 +1,3594 @@
+﻿{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "httpbin.org (new)",
+    "description": "A simple HTTP Request & Response Service. This is the latest, most up to date, and organized collection to be used against the HTTPBin API.\n\n## Support\nIf you have any questions please comment on the collection, or the OpenAPI for the API, or you can also fork and submit a pull request with any changes to the collection.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://{{baseurl}}"
+    }
+  ],
+  "tags": [
+    {
+      "name": "HTTP Methods"
+    },
+    {
+      "name": "Authentication"
+    },
+    {
+      "name": "Status Codes"
+    },
+    {
+      "name": "Request Inspection"
+    },
+    {
+      "name": "Delay"
+    },
+    {
+      "name": "Response Inspection"
+    },
+    {
+      "name": "Response Formats"
+    },
+    {
+      "name": "Response Headers"
+    },
+    {
+      "name": "Dynamic Data"
+    },
+    {
+      "name": "Cookies"
+    },
+    {
+      "name": "Cookies > set"
+    },
+    {
+      "name": "Images"
+    },
+    {
+      "name": "Redirects"
+    },
+    {
+      "name": "Anything"
+    },
+    {
+      "name": "Anything > {anything}"
+    }
+  ],
+  "paths": {
+    "/put": {
+      "put": {
+        "tags": [
+          "HTTP Methods"
+        ],
+        "summary": "The request's PUT parameters.",
+        "requestBody": {
+          "content": {}
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/patch": {
+      "patch": {
+        "tags": [
+          "HTTP Methods"
+        ],
+        "summary": "The request's PATCH parameters.",
+        "requestBody": {
+          "content": {}
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/delete": {
+      "delete": {
+        "tags": [
+          "HTTP Methods"
+        ],
+        "summary": "The request's DELETE parameters.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/get": {
+      "get": {
+        "tags": [
+          "HTTP Methods"
+        ],
+        "summary": "The request's query parameters.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/post": {
+      "post": {
+        "tags": [
+          "HTTP Methods"
+        ],
+        "summary": "The request's POST parameters.",
+        "requestBody": {
+          "content": {}
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/hidden-basic-auth/{user}/{passwd}": {
+      "get": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Prompts the user for authorization using HTTP Basic Auth.",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "do Duis amet dolor"
+          },
+          {
+            "name": "passwd",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "do Duis amet dolor"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/digest-auth/{qop}/{user}/{passwd}/{algorithm}": {
+      "get": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Prompts the user for authorization using Digest Auth + Algorithm.",
+        "parameters": [
+          {
+            "name": "qop",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) auth or auth-int",
+            "example": "do Duis amet dolor"
+          },
+          {
+            "name": "user",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "do Duis amet dolor"
+          },
+          {
+            "name": "passwd",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "do Duis amet dolor"
+          },
+          {
+            "name": "algorithm",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) MD5, SHA-256, SHA-512",
+            "example": "MD5"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/digest-auth/{qop}/{user}/{passwd}/{algorithm}/{stale_after}": {
+      "get": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Prompts the user for authorization using Digest Auth + Algorithm.",
+        "description": "allow settings the stale_after argument.\n",
+        "parameters": [
+          {
+            "name": "qop",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) auth or auth-int",
+            "example": "do Duis amet dolor"
+          },
+          {
+            "name": "user",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "do Duis amet dolor"
+          },
+          {
+            "name": "passwd",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "do Duis amet dolor"
+          },
+          {
+            "name": "algorithm",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) MD5, SHA-256, SHA-512",
+            "example": "MD5"
+          },
+          {
+            "name": "stale_after",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "never"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/digest-auth/{qop}/{user}/{passwd}": {
+      "get": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Prompts the user for authorization using Digest Auth.",
+        "parameters": [
+          {
+            "name": "qop",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) auth or auth-int",
+            "example": "do Duis amet dolor"
+          },
+          {
+            "name": "user",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "do Duis amet dolor"
+          },
+          {
+            "name": "passwd",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "do Duis amet dolor"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/status/{codes}": {
+      "delete": {
+        "tags": [
+          "Status Codes"
+        ],
+        "summary": "Return status code or random status code if more than one are given",
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "do Duis amet dolor"
+          }
+        ],
+        "responses": {
+          "100": {
+            "description": "Continue",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "300": {
+            "description": "Multiple Choices",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Status Codes"
+        ],
+        "summary": "Return status code or random status code if more than one are given",
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "do Duis amet dolor"
+          }
+        ],
+        "responses": {
+          "100": {
+            "description": "Continue",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "300": {
+            "description": "Multiple Choices",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Status Codes"
+        ],
+        "summary": "Return status code or random status code if more than one are given",
+        "requestBody": {
+          "content": {}
+        },
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "do Duis amet dolor"
+          }
+        ],
+        "responses": {
+          "100": {
+            "description": "Continue",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "300": {
+            "description": "Multiple Choices",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Status Codes"
+        ],
+        "summary": "Return status code or random status code if more than one are given",
+        "requestBody": {
+          "content": {}
+        },
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "do Duis amet dolor"
+          }
+        ],
+        "responses": {
+          "100": {
+            "description": "Continue",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "300": {
+            "description": "Multiple Choices",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Status Codes"
+        ],
+        "summary": "Return status code or random status code if more than one are given",
+        "requestBody": {
+          "content": {}
+        },
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "do Duis amet dolor"
+          }
+        ],
+        "responses": {
+          "100": {
+            "description": "Continue",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "300": {
+            "description": "Multiple Choices",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "trace": {
+        "tags": [
+          "Status Codes"
+        ],
+        "summary": "Return status code or random status code if more than one are given",
+        "requestBody": {
+          "content": {}
+        },
+        "parameters": [
+          {
+            "name": "codes",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "do Duis amet dolor"
+          }
+        ],
+        "responses": {
+          "100": {
+            "description": "Continue",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "300": {
+            "description": "Multiple Choices",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/user-agent": {
+      "get": {
+        "tags": [
+          "Request Inspection"
+        ],
+        "summary": "Return the incoming requests's User-Agent header.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ip": {
+      "get": {
+        "tags": [
+          "Request Inspection"
+        ],
+        "summary": "Returns the requester's IP Address.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/headers": {
+      "get": {
+        "tags": [
+          "Request Inspection"
+        ],
+        "summary": "Return the incoming request's HTTP headers.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/delay/{delay}": {
+      "delete": {
+        "tags": [
+          "Delay"
+        ],
+        "summary": "Returns a delayed response (max of 10 seconds).",
+        "parameters": [
+          {
+            "name": "delay",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "93024369"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Delay"
+        ],
+        "summary": "Returns a delayed response (max of 10 seconds).",
+        "parameters": [
+          {
+            "name": "delay",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "93024369"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Delay"
+        ],
+        "summary": "Returns a delayed response (max of 10 seconds).",
+        "requestBody": {
+          "content": {}
+        },
+        "parameters": [
+          {
+            "name": "delay",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "93024369"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Delay"
+        ],
+        "summary": "Returns a delayed response (max of 10 seconds).",
+        "requestBody": {
+          "content": {}
+        },
+        "parameters": [
+          {
+            "name": "delay",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "93024369"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Delay"
+        ],
+        "summary": "Returns a delayed response (max of 10 seconds).",
+        "requestBody": {
+          "content": {}
+        },
+        "parameters": [
+          {
+            "name": "delay",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "93024369"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "trace": {
+        "tags": [
+          "Delay"
+        ],
+        "summary": "Returns a delayed response (max of 10 seconds).",
+        "requestBody": {
+          "content": {}
+        },
+        "parameters": [
+          {
+            "name": "delay",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "93024369"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/etag/{etag}": {
+      "get": {
+        "tags": [
+          "Response Inspection"
+        ],
+        "summary": "Assumes the resource has the given etag and responds to If-None-Match and If-Match headers appropriately.",
+        "parameters": [
+          {
+            "name": "If-None-Match",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "do Duis amet dolor"
+          },
+          {
+            "name": "If-Match",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "do Duis amet dolor"
+          },
+          {
+            "name": "etag",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "do Duis amet dolor"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "412": {
+            "description": "Precondition Failed",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cache": {
+      "get": {
+        "tags": [
+          "Response Inspection"
+        ],
+        "summary": "Returns a 304 if an If-Modified-Since header or If-None-Match is present. Returns the same as a GET otherwise.",
+        "parameters": [
+          {
+            "name": "If-Modified-Since",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "do Duis amet dolor"
+          },
+          {
+            "name": "If-None-Match",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "do Duis amet dolor"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "304": {
+            "description": "Not Modified",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cache/{value}": {
+      "get": {
+        "tags": [
+          "Response Inspection"
+        ],
+        "summary": "Sets a Cache-Control header for n seconds.",
+        "parameters": [
+          {
+            "name": "value",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "93024369"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/xml": {
+      "get": {
+        "tags": [
+          "Response Formats"
+        ],
+        "summary": "Returns a simple XML document.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/robots.txt": {
+      "get": {
+        "tags": [
+          "Response Formats"
+        ],
+        "summary": "Returns some robots.txt rules.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/html": {
+      "get": {
+        "tags": [
+          "Response Formats"
+        ],
+        "summary": "Returns a simple HTML document.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/encoding/utf8": {
+      "get": {
+        "tags": [
+          "Response Formats"
+        ],
+        "summary": "Returns a UTF-8 encoded body.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/deflate": {
+      "get": {
+        "tags": [
+          "Response Formats"
+        ],
+        "summary": "Returns Deflate-encoded data.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/brotli": {
+      "get": {
+        "tags": [
+          "Response Formats"
+        ],
+        "summary": "Returns Brotli-encoded data.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/deny": {
+      "get": {
+        "tags": [
+          "Response Formats"
+        ],
+        "summary": "Returns page denied by robots.txt rules.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/gzip": {
+      "get": {
+        "tags": [
+          "Response Formats"
+        ],
+        "summary": "Returns GZip-encoded data.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/json": {
+      "get": {
+        "tags": [
+          "Response Formats"
+        ],
+        "summary": "Returns a simple JSON document.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/response-headers": {
+      "get": {
+        "tags": [
+          "Response Headers"
+        ],
+        "summary": "Returns a set of response headers from the query string.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Response Headers"
+        ],
+        "summary": "Returns a set of response headers from the query string.",
+        "requestBody": {
+          "content": {}
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/uuid": {
+      "get": {
+        "tags": [
+          "Dynamic Data"
+        ],
+        "summary": "Return a UUID4.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/stream-bytes/{n}": {
+      "get": {
+        "tags": [
+          "Dynamic Data"
+        ],
+        "summary": "Streams n random bytes generated with given seed, at given chunk size per packet.",
+        "parameters": [
+          {
+            "name": "n",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "93024369"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/links/{n}/{offset}": {
+      "get": {
+        "tags": [
+          "Dynamic Data"
+        ],
+        "summary": "Generate a page containing n links to other pages which do the same.",
+        "parameters": [
+          {
+            "name": "n",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "93024369"
+          },
+          {
+            "name": "offset",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "93024369"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/bytes/{n}": {
+      "get": {
+        "tags": [
+          "Dynamic Data"
+        ],
+        "summary": "Returns n random bytes generated with given seed",
+        "parameters": [
+          {
+            "name": "n",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "93024369"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/basic-auth/{user}/{passwd}": {
+      "get": {
+        "tags": [
+          "Dynamic Data"
+        ],
+        "summary": "Prompts the user for authorization using HTTP Basic Auth.",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "do Duis amet dolor"
+          },
+          {
+            "name": "passwd",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "do Duis amet dolor"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/base64/{value}": {
+      "get": {
+        "tags": [
+          "Dynamic Data"
+        ],
+        "summary": "Decodes base64url-encoded string.",
+        "parameters": [
+          {
+            "name": "value",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "SFRUUEJJTiBpcyBhd2Vzb21l"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/bearer": {
+      "get": {
+        "tags": [
+          "Dynamic Data"
+        ],
+        "summary": "Prompts the user for authorization using bearer authentication.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/drip": {
+      "get": {
+        "tags": [
+          "Dynamic Data"
+        ],
+        "summary": "Drips data over a duration after an optional initial delay.",
+        "parameters": [
+          {
+            "name": "duration",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "The amount of time (in seconds) over which to drip each byte",
+            "example": "2"
+          },
+          {
+            "name": "numbytes",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "The number of bytes to respond with",
+            "example": "10"
+          },
+          {
+            "name": "code",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "The response code that will be returned",
+            "example": "200"
+          },
+          {
+            "name": "delay",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "The amount of time (in seconds) to delay before responding",
+            "example": "2"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/range/{numbytes}": {
+      "get": {
+        "tags": [
+          "Dynamic Data"
+        ],
+        "summary": "Streams n random bytes generated with given seed, at given chunk size per packet.",
+        "parameters": [
+          {
+            "name": "numbytes",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "93024369"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/stream/{n}": {
+      "get": {
+        "tags": [
+          "Dynamic Data"
+        ],
+        "summary": "Stream n JSON responses",
+        "parameters": [
+          {
+            "name": "n",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "93024369"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cookies/set": {
+      "get": {
+        "tags": [
+          "Cookies > set"
+        ],
+        "summary": "Sets cookie(s) as provided by the query string and redirects to cookie list.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cookies/set/{name}/{value}": {
+      "get": {
+        "tags": [
+          "Cookies > set"
+        ],
+        "summary": "Sets a cookie and redirects to cookie list.",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "do Duis amet dolor"
+          },
+          {
+            "name": "value",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "do Duis amet dolor"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cookies": {
+      "get": {
+        "tags": [
+          "Cookies"
+        ],
+        "summary": "Returns cookie data.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cookies/delete": {
+      "get": {
+        "tags": [
+          "Cookies"
+        ],
+        "summary": "Deletes cookie(s) as provided by the query string and redirects to cookie list.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/image": {
+      "get": {
+        "tags": [
+          "Images"
+        ],
+        "summary": "Returns a simple image of the type suggest by the Accept header.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/image/jpeg": {
+      "get": {
+        "tags": [
+          "Images"
+        ],
+        "summary": "Returns a simple JPEG image.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/image/png": {
+      "get": {
+        "tags": [
+          "Images"
+        ],
+        "summary": "Returns a simple PNG image.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/image/svg": {
+      "get": {
+        "tags": [
+          "Images"
+        ],
+        "summary": "Returns a simple SVG image.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/image/webp": {
+      "get": {
+        "tags": [
+          "Images"
+        ],
+        "summary": "Returns a simple WEBP image.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/relative-redirect/{n}": {
+      "get": {
+        "tags": [
+          "Redirects"
+        ],
+        "summary": "Relatively 302 Redirects n times.",
+        "parameters": [
+          {
+            "name": "n",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "93024369"
+          }
+        ],
+        "responses": {
+          "302": {
+            "description": "Found",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/absolute-redirect/{n}": {
+      "get": {
+        "tags": [
+          "Redirects"
+        ],
+        "summary": "Absolutely 302 Redirects n times.",
+        "parameters": [
+          {
+            "name": "n",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "93024369"
+          }
+        ],
+        "responses": {
+          "302": {
+            "description": "Found",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/redirect-to": {
+      "delete": {
+        "tags": [
+          "Redirects"
+        ],
+        "summary": "302/3XX Redirects to the given URL.",
+        "responses": {
+          "302": {
+            "description": "Found",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Redirects"
+        ],
+        "summary": "302/3XX Redirects to the given URL.",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "(Required) ",
+            "example": "do Duis amet dolor"
+          },
+          {
+            "name": "status_code",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "example": "93024369"
+          }
+        ],
+        "responses": {
+          "302": {
+            "description": "Found",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Redirects"
+        ],
+        "summary": "302/3XX Redirects to the given URL.",
+        "requestBody": {
+          "content": {}
+        },
+        "responses": {
+          "302": {
+            "description": "Found",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Redirects"
+        ],
+        "summary": "302/3XX Redirects to the given URL.",
+        "requestBody": {
+          "content": {}
+        },
+        "responses": {
+          "302": {
+            "description": "Found",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Redirects"
+        ],
+        "summary": "302/3XX Redirects to the given URL.",
+        "requestBody": {
+          "content": {}
+        },
+        "responses": {
+          "302": {
+            "description": "Found",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "trace": {
+        "tags": [
+          "Redirects"
+        ],
+        "summary": "302/3XX Redirects to the given URL.",
+        "requestBody": {
+          "content": {}
+        },
+        "responses": {
+          "302": {
+            "description": "Found",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/redirect/{n}": {
+      "get": {
+        "tags": [
+          "Redirects"
+        ],
+        "summary": "302 Redirects n times.",
+        "parameters": [
+          {
+            "name": "n",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "93024369"
+          }
+        ],
+        "responses": {
+          "302": {
+            "description": "Found",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/anything/{anything}": {
+      "delete": {
+        "tags": [
+          "Anything > {anything}"
+        ],
+        "summary": "Returns anything passed in request data.",
+        "parameters": [
+          {
+            "name": "anything",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "do Duis amet dolor"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Anything > {anything}"
+        ],
+        "summary": "Returns anything passed in request data.",
+        "parameters": [
+          {
+            "name": "anything",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "do Duis amet dolor"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Anything > {anything}"
+        ],
+        "summary": "Returns anything passed in request data.",
+        "requestBody": {
+          "content": {}
+        },
+        "parameters": [
+          {
+            "name": "anything",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "do Duis amet dolor"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Anything > {anything}"
+        ],
+        "summary": "Returns anything passed in request data.",
+        "requestBody": {
+          "content": {}
+        },
+        "parameters": [
+          {
+            "name": "anything",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "do Duis amet dolor"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Anything > {anything}"
+        ],
+        "summary": "Returns anything passed in request data.",
+        "requestBody": {
+          "content": {}
+        },
+        "parameters": [
+          {
+            "name": "anything",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "do Duis amet dolor"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "trace": {
+        "tags": [
+          "Anything > {anything}"
+        ],
+        "summary": "Returns anything passed in request data.",
+        "requestBody": {
+          "content": {}
+        },
+        "parameters": [
+          {
+            "name": "anything",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "(Required) ",
+            "example": "do Duis amet dolor"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/anything": {
+      "delete": {
+        "tags": [
+          "Anything"
+        ],
+        "summary": "Returns anything passed in request data.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Anything"
+        ],
+        "summary": "Returns anything passed in request data.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Anything"
+        ],
+        "summary": "Returns anything passed in request data.",
+        "requestBody": {
+          "content": {}
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Anything"
+        ],
+        "summary": "Returns anything passed in request data.",
+        "requestBody": {
+          "content": {}
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Anything"
+        ],
+        "summary": "Returns anything passed in request data.",
+        "requestBody": {
+          "content": {}
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      },
+      "trace": {
+        "tags": [
+          "Anything"
+        ],
+        "summary": "Returns anything passed in request data.",
+        "requestBody": {
+          "content": {}
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "text/plain"
+                }
+              }
+            },
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
