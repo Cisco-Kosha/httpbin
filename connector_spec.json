@@ -1,3 +1,40 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<configuration>
-</configuration>
+﻿{
+    "version": "2.0.0",
+    "fields": [
+        {
+            "field": "BEARER_TOKEN",
+            "displayName": "HttpBin Access Token",
+            "type": "String",
+            "minLength": 4,
+            "maxLength": 60,
+            "required": true,
+            "description": "HttpBin Access Token",
+            "example": "YmU3NjZlNDItZjZiMy00NzIwLTgwYzItZjY2Zjc5ZmNhYWQwZWIxMZE8OWOtMmQl_PF84_1eb65fdf-0000-417f-9974-ad52cae0e10f",
+            "helpSection": "Go to https://httpbin.org/docs/getting-started and you will find your personal access token"
+        },
+        {
+            "field": "AUTH_TYPE",
+            "displayName": "HttpBin Auth Type",
+            "type": "String",
+            "minLength": 4,
+            "maxLength": 60,
+            "required": true,
+            "description": "HttpBin API Auth Type",
+            "default": "BEARER_TOKEN",
+            "example": "BEARER_TOKEN",
+            "helpSection": ""
+        },
+        {
+            "field": "SERVER_URL",
+            "displayName": "HttpBin Server URL",
+            "type": "String",
+            "minLength": 4,
+            "maxLength": 60,
+            "required": true,
+            "description": "HttpBin API Server URL",
+            "default": "https://httpbin.org",
+            "example": "https://httpbin.org",
+            "helpSection": "Use the default value https://httpbin.org"
+        }
+    ]
+}
