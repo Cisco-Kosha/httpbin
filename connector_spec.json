@@ -32,7 +32,6 @@
             "maxLength": 60,
             "required": true,
             "description": "HttpBin API Server URL",
-            "default": "https://httpbin.org",
             "example": "https://httpbin.org",
             "helpSection": "Use the default value https://httpbin.org"
         }
